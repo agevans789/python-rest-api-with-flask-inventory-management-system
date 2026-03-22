@@ -37,7 +37,7 @@ def delete_item(item_id):
 @app.route('/fetch-product/<barcode>', methods=['GET'])
 def fetch_external_product(barcode):
     # Integration with Open Food Facts API
-    url = f"https://world.openfoodfacts.org{barcode}.json"
+    url = f"https://world.openfoodfacts.org/{barcode}.json"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
